@@ -88,7 +88,6 @@ reviewSchema.post('save', function() {
 // 'pre' middleware to attach the review on the query
 reviewSchema.pre(/^findOneAnd/, async function(next) {
   this.r = await this.findOne();
-  // console.log(this.r);
   next();
 });
 // 'post' middleware to call the method on the constructor using the review attached to the query
